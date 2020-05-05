@@ -19,9 +19,7 @@ def dicts_word_count(file):
 
         print(f"{key} {value}")
             
-dicts_word_count(sys.argv[1])
+dicts_word_count(sys.argv[1:])
 
 print ("Number of arguments:", len(sys.argv), "arguments.")
-
-
  
