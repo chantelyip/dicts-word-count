@@ -1,10 +1,9 @@
 import sys
 import string 
 
+def dicts_word_count(file):
 
-def dicts_word_count(test_file):
-
-    word_count = open(test_file)
+    word_count = open(file)
 
     word_count_dict = {}
 
@@ -12,7 +11,7 @@ def dicts_word_count(test_file):
         words = line.strip().split(" ")
         
         for word in words:
-            word = word.strip(string.punctuation) 
+            word = word.strip(string.punctuation).lower() 
             word_count_dict[word] = word_count_dict.get(word, 0) + 1
 
 
@@ -20,7 +19,10 @@ def dicts_word_count(test_file):
 
         print(f"{key} {value}")
             
-dicts_word_count(sys.argv[0])
+dicts_word_count(sys.argv[1])
+
+print ('Number of arguments:', len(sys.argv), 'arguments.')
+
 
 
 
